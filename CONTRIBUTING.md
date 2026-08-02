@@ -1,15 +1,15 @@
 # Contributing / 参与贡献
 
-Thank you for improving Project Thread Orchestrator.  
+Thank you for improving Project Thread Orchestrator.<br />
 感谢你帮助改进 Project Thread Orchestrator。
 
 ## Before you start / 开始前
 
-1. Search existing issues before opening a new one.  
+1. Search existing issues before opening a new one.<br />
    创建新 Issue 前请先搜索已有问题。
-2. Discuss large behavior, protocol, or security changes in an issue first.  
+2. Discuss large behavior, protocol, or security changes in an issue first.<br />
    涉及行为、协议或安全模型的大改动，请先在 Issue 中讨论。
-3. Do not weaken the preview-and-confirm boundary.  
+3. Do not weaken the preview-and-confirm boundary.<br />
    不得削弱“预览后确认”的安全边界。
 
 ## Development workflow / 开发流程
@@ -24,7 +24,7 @@ pnpm run verify:dist
 pnpm run validate:package
 ```
 
-Keep changes focused, add tests for behavior changes, and update English and Chinese documentation together.  
+Keep changes focused, add tests for behavior changes, and update English and Chinese documentation together.<br />
 请保持改动聚焦；行为变更须添加测试，并同时更新中文与英文文档。
 
 ## Pull requests / 拉取请求
