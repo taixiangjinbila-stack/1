@@ -1,0 +1,22 @@
+{
+  "name": "project-thread-orchestrator",
+  "version": "0.2.1-mvp",
+  "description": "Plan, preview, create, initialize, list, synchronize, and safely archive persistent Codex project threads through the public Codex App Server.",
+  "author": {
+    "name": "Project Thread Orchestrator contributors"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Project Thread Orchestrator",
+    "shortDescription": "Turn project capsules into safe Codex task threads.",
+    "longDescription": "Pairs a project-capsule planning Skill with a local stdio MCP server. It validates and previews a 3-12 milestone DAG, waits for explicit user confirmation, then creates persistent named Codex threads through codex app-server and initializes each thread without executing its milestone.",
+    "developerName": "Project Thread Orchestrator contributors",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": "Use $project-thread-orchestrator:project-capsule-orchestrator to audit, adapt, preview, then stop for explicit confirmation."
+  },
+  "mcpServers": "./.mcp.json"
+}

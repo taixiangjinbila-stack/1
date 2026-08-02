@@ -1,0 +1,11 @@
+interface:
+  display_name: "Project Capsule Orchestrator / 项目胶囊编排器"
+  short_description: "Audit projects and orchestrate confirmed milestones / 审计项目并编排确认后的里程碑"
+  default_prompt: "Use $project-thread-orchestrator:project-capsule-orchestrator to audit this project, build its capsule, preview milestone threads, and stop for explicit confirmation. 使用该 Skill 审计项目、构建项目胶囊、预览里程碑任务，并在明确确认前停止。"
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "project-thread-orchestrator"
+      description: "Preview, create, reconcile, and archive persistent Codex project threads"
+      transport: "stdio"

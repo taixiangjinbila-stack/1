@@ -1,0 +1,87 @@
+{
+  "project_cwd": "C:\\work\\example-project",
+  "project_name": "Example Project",
+  "initialize_only": true,
+  "recreate_archived": false,
+  "threads": [
+    {
+      "milestone_id": "M0",
+      "name": "确认项目事实",
+      "goal": "建立可追溯的项目事实基线，并明确未知项。",
+      "initial_prompt": "只读取项目胶囊并汇报事实、范围、验收标准与阻塞项。",
+      "dependencies": [],
+      "allowed_paths": [
+        "."
+      ],
+      "forbidden_paths": [
+        ".git",
+        ".agents",
+        ".codex",
+        ".project-capsule"
+      ],
+      "acceptance_criteria": [
+        "事实与未知项均有来源或明确标记。",
+        "初始化过程中没有修改文件。"
+      ],
+      "validation_commands": [
+        "git status --short"
+      ],
+      "initial_status": "READY",
+      "sandbox_mode": "read-only"
+    },
+    {
+      "milestone_id": "M1",
+      "name": "建立构建基线",
+      "goal": "定义可复现的构建与测试基线。",
+      "initial_prompt": "只读取项目胶囊，核对 M0 依赖并汇报未来的基线验证范围，不运行命令。",
+      "dependencies": [
+        "M0"
+      ],
+      "allowed_paths": [
+        "src",
+        "tests"
+      ],
+      "forbidden_paths": [
+        ".git",
+        ".env"
+      ],
+      "acceptance_criteria": [
+        "构建与测试入口有明确清单。",
+        "依赖未满足时状态为 WAITING。"
+      ],
+      "validation_commands": [
+        "npm test"
+      ],
+      "initial_status": "WAITING",
+      "sandbox_mode": "workspace-write"
+    },
+    {
+      "milestone_id": "M2",
+      "name": "规划首个增量",
+      "goal": "把首个可交付增量限定为单一、可验收的工作单元。",
+      "initial_prompt": "只读取项目胶囊，核对 M0 与 M1，并汇报增量范围、验收标准及阻塞项。",
+      "dependencies": [
+        "M0",
+        "M1"
+      ],
+      "allowed_paths": [
+        "src",
+        "tests"
+      ],
+      "forbidden_paths": [
+        ".git",
+        ".env",
+        "deploy"
+      ],
+      "acceptance_criteria": [
+        "范围与非目标清晰。",
+        "验收标准可由后续回合执行。"
+      ],
+      "validation_commands": [
+        "npm test"
+      ],
+      "initial_status": "WAITING",
+      "sandbox_mode": "workspace-write"
+    }
+  ]
+}

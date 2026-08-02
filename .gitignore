@@ -1,0 +1,9 @@
+# Development dependencies and generated diagnostics
+.pnpm-store/
+**/node_modules/
+**/.tmp/
+**/*.log
+
+# Local copies and release backups are not part of the published plugin.
+/project-capsule-orchestrator/
+/project-thread-orchestrator-complex-backup-*/

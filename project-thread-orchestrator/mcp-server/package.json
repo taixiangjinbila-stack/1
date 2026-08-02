@@ -1,0 +1,34 @@
+{
+  "name": "@local/project-thread-orchestrator-mcp",
+  "version": "0.2.1-mvp",
+  "private": true,
+  "type": "module",
+  "description": "Local stdio MCP server that creates and manages Codex project threads through codex app-server.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "pnpm run typecheck && node ../tests/build.mjs",
+    "build:artifacts": "node ../tests/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --config vitest.config.ts",
+    "test:watch": "vitest --config vitest.config.ts",
+    "validate:package": "node ../tests/validate-package.mjs",
+    "validate:protocol": "node ../tests/validate-app-server-protocol.mjs",
+    "verify:dist": "node ../tests/verify-dist.mjs",
+    "smoke": "tsx ../tests/manual-smoke.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "4.1.10"
+  }
+}
